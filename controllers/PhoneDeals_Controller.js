@@ -43,6 +43,7 @@ const addArticle = (req, res) => {
 
 const getAllArticles = (req, res) => {
   DealsSchema.find()
+    .sort({ createdAt: -1 }) 
     .then((articles) => {
       res.json(articles);
     })
@@ -51,6 +52,24 @@ const getAllArticles = (req, res) => {
       res.status(500).send("Internal Server Error");
     });
 };
+
+const getArticleById = (req, res) => {
+  const { id } = req.params;
+
+  DealsSchema.findById(id)
+    .then((article) => {
+      if (!article) {
+        return res.status(404).send("Article not found");
+      }
+      res.json(article);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send("Internal Server Error");
+    });
+};
+
+
 
 const updateArticle = (req, res) => {
   const { id } = req.params;
@@ -137,6 +156,7 @@ const deleteArticle = (req, res) => {
 module.exports = {
   addArticle,
   getAllArticles,
+  getArticleById,
   updateArticle,
   patchArticle,
   deleteArticle,

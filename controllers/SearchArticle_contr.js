@@ -1,5 +1,5 @@
 const HomeArticle = require("../models/HomeArticlesModel"); // Import your homeArticleSchema model
-const ReviewsArticle = require("../models/ReviewsArticleModel"); // Import your reviewsArticleSchema model
+const techNewsArticleSchema = require("../models/TechNewsArt_model"); // Import your techNewsArticleSchemaSchema model
 const AppsArticle = require("../models/PhoneAppsModel"); // Import your AppsSchema model
 
 const searchNews = async (req, res) => {
@@ -15,11 +15,11 @@ const searchNews = async (req, res) => {
   }
 };
 
-const searchReviews = async (req, res) => {
+const searchTechNews = async (req, res) => {
   const { value } = req.params;
 
   try {
-    const results = await ReviewsArticle.find({
+    const results = await techNewsArticleSchema.find({
       title: { $regex: new RegExp(value, "i") },
     });
     res.json(results);
@@ -41,4 +41,4 @@ const searchApps = async (req, res) => {
   }
 };
 
-module.exports = { searchNews, searchReviews, searchApps };
+module.exports = { searchNews, searchTechNews, searchApps };

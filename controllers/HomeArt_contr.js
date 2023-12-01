@@ -36,7 +36,7 @@ const getArticleById = (req, res) => {
       res.json(article);
     })
     .catch((error) => {
-      console.error(error);
+      console.log(error)
       res.status(500).send("Internal Server Error");
     });
 };

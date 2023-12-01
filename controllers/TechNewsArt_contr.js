@@ -1,8 +1,15 @@
-const ReviewModel = require("../models/ReviewsArticleModel");
+const TechNewsModel = require("../models/TechNewsArt_model");
 
 const addArticle = (req, res) => {
-  const { title,innerTitle, description, images, author, source } = req.body;
-  ReviewModel.create({ title,innerTitle, description, images, author, source })
+  const { title, innerTitle, description, images, author, source } = req.body;
+  TechNewsModel.create({
+    title,
+    innerTitle,
+    description,
+    images,
+    author,
+    source,
+  })
     .then((result) => {
       console.log(result);
       res.send("Article added");
@@ -14,9 +21,9 @@ const addArticle = (req, res) => {
 };
 
 const getAllArticles = (req, res) => {
-  ReviewModel.find()
+  TechNewsModel.find()
     .then((articles) => {
-      console.log(articles)
+      console.log(articles);
       res.json(articles);
     })
     .catch((error) => {
@@ -28,7 +35,7 @@ const getAllArticles = (req, res) => {
 const getArticleById = (req, res) => {
   const { id } = req.params;
 
-  ReviewModel.findById(id)
+  TechNewsModel.findById(id)
     .then((article) => {
       if (!article) {
         return res.status(404).send("Article not found");
@@ -43,11 +50,11 @@ const getArticleById = (req, res) => {
 
 const updateArticle = (req, res) => {
   const { id } = req.params;
-  const { title,innerTitle, description, images, author, source } = req.body;
+  const { title, innerTitle, description, images, author, source } = req.body;
 
-  ReviewModel.findByIdAndUpdate(
+  TechNewsModel.findByIdAndUpdate(
     id,
-    { title,innerTitle, description, images, author, source },
+    { title, innerTitle, description, images, author, source },
     { new: true }
   )
     .then((updatedArticle) => {
@@ -66,7 +73,7 @@ const patchArticle = (req, res) => {
   const { id } = req.params;
   const updateFields = req.body;
 
-  ReviewModel.findByIdAndUpdate(id, { $set: updateFields }, { new: true })
+  TechNewsModel.findByIdAndUpdate(id, { $set: updateFields }, { new: true })
     .then((updatedArticle) => {
       if (!updatedArticle) {
         return res.status(404).send("Article not found");
@@ -82,7 +89,7 @@ const patchArticle = (req, res) => {
 const deleteArticle = (req, res) => {
   const { id } = req.params;
 
-  ReviewModel.findByIdAndDelete(id)
+  TechNewsModel.findByIdAndDelete(id)
     .then((deletedArticle) => {
       if (!deletedArticle) {
         return res.status(404).send("Article not found");

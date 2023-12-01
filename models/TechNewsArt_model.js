@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const ReviewsArticleSchema = new Schema({
+const TechNewsArticleSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -28,7 +28,6 @@ const ReviewsArticleSchema = new Schema({
       },
     },
   ],
-
   images: {
     type: [String],
     required: true,
@@ -47,9 +46,9 @@ const ReviewsArticleSchema = new Schema({
   },
 });
 
-const reviewsArticleSchema = mongoose.model(
-  "ReviewsArticles",
-  ReviewsArticleSchema
+const techNewsArticleSchema = mongoose.model(
+  "TechNewsArticles",
+  TechNewsArticleSchema
 );
 
-module.exports = reviewsArticleSchema;
+module.exports = techNewsArticleSchema;
