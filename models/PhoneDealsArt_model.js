@@ -52,6 +52,10 @@ const phoneDealsSchema = new mongoose.Schema({
   link: {
     type: String,
   },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const DealsSchema = mongoose.model("PhoneDealsArticles", phoneDealsSchema);

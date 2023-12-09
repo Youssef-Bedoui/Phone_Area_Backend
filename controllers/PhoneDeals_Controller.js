@@ -15,6 +15,7 @@ const addArticle = (req, res) => {
     frontCamera,
     colors,
     link,
+    date,
   } = req.body;
   DealsSchema.create({
     model,
@@ -30,6 +31,7 @@ const addArticle = (req, res) => {
     frontCamera,
     colors,
     link,
+    date
   })
     .then((result) => {
       console.log(result);
@@ -87,6 +89,7 @@ const updateArticle = (req, res) => {
     frontCamera,
     colors,
     link,
+    date,
   } = req.body;
 
   DealsSchema.findByIdAndUpdate(
@@ -105,6 +108,7 @@ const updateArticle = (req, res) => {
       frontCamera,
       colors,
       link,
+      date,
     },
     { new: true }
   )
