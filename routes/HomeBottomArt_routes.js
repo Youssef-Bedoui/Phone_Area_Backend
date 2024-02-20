@@ -7,7 +7,7 @@ const {
   deleteArticle,
   getAllArticles,
   getArticleById,
-} = require("../controllers/HomeBottomArt_contr");
+} = require("../controllers/HomeBottomArt_contr.js");
 
 router.post("/add", addArticle);
 router.get("/articles", getAllArticles);

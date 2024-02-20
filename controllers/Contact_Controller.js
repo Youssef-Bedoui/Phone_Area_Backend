@@ -1,4 +1,3 @@
-// controllers/contactController.js
 
 const ContactModel = require("../models/Contact_Model");
 

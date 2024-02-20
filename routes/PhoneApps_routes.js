@@ -7,7 +7,7 @@ const {
   updateArticle,
   patchArticle,
   deleteArticle,
-} = require("../controllers/PhoneApps_controller");
+} = require("../controllers/PhoneApps_controller.js");
 
 router.post("/add", addArticle);
 router.get("/articles", getAllArticles);

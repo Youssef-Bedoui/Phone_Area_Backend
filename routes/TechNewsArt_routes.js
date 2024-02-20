@@ -7,7 +7,7 @@ const {
   updateArticle,
   patchArticle,
   deleteArticle,
-} = require("../controllers/TechNewsArt_contr");
+} = require("../controllers/TechNewsArt_contr.js");
 
 router.post("/add", addArticle);
 router.get("/articles", getAllArticles);

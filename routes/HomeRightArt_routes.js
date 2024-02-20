@@ -7,7 +7,7 @@ const {
   updateArticle,
   patchArticle,
   deleteArticle,
-} = require("../controllers/HomeRightArticleController");
+} = require("../controllers/HomeRightArticleController.js");
 
 router.post("/add", addArticle);
 router.get("/articles", getAllArticles);

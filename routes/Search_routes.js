@@ -4,7 +4,7 @@ const {
   searchNews,
   searchTechNews,
   searchApps,
-} = require("../controllers/SearchArticle_contr");
+} = require("../controllers/SearchArticle_contr.js");
 
 router.get("/news/:value", searchNews);
 router.get("/TechNewsArticles/:value", searchTechNews);

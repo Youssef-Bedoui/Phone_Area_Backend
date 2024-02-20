@@ -4,7 +4,7 @@ const {
   getAllArticles,
   updateArticle,
   patchArticle,
-} = require("../controllers/HomeBigArt_controller");
+} = require("../controllers/HomeBigArt_controller.js");
 
 router.post("/add", addArticle);
 router.get("/articles", getAllArticles);

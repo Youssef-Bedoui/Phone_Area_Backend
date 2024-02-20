@@ -7,7 +7,7 @@ const {
   updateArticle,
   patchArticle,
   deleteArticle,
-} = require("../controllers/HomeArt_contr");
+} = require("../controllers/HomeArt_contr.js");
 
 router.post("/add", addArticle);
 router.get("/articles", getAllArticles);
