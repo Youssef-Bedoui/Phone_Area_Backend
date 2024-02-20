@@ -13,4 +13,4 @@ const db = mongoose
     console.log(`Error connecting to MongoDB: ${err}`);
   });
 
-module.exoports = db;
+module.exports = db;

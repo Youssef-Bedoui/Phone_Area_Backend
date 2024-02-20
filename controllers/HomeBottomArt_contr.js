@@ -1,8 +1,15 @@
 const HomeBottomModel = require("../models/HomeBottomArt_Model");
 
 const addArticle = (req, res) => {
-  const { title,innerTitle, description, images, author, source } = req.body;
-  HomeBottomModel.create({ title,innerTitle, description, images, author, source })
+  const { title, innerTitle, description, images, author, source } = req.body;
+  HomeBottomModel.create({
+    title,
+    innerTitle,
+    description,
+    images,
+    author,
+    source,
+  })
     .then((result) => {
       console.log(result);
       res.send("Article added");
@@ -42,11 +49,11 @@ const getArticleById = (req, res) => {
 
 const updateArticle = (req, res) => {
   const { id } = req.params;
-  const { title,innerTitle, description, images, author, source } = req.body;
+  const { title, innerTitle, description, images, author, source } = req.body;
 
   HomeBottomModel.findByIdAndUpdate(
     id,
-    { title,innerTitle, description, images, author, source },
+    { title, innerTitle, description, images, author, source },
     { new: true }
   )
     .then((updatedArticle) => {

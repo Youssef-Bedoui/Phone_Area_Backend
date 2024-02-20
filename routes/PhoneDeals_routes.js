@@ -7,7 +7,7 @@ const {
   updateArticle,
   patchArticle,
   deleteArticle
- } = require("../controllers/PhoneDeals_controller");
+ } = require("../controllers/PhoneDeals_controller.js");
 
 router.post("/add", addArticle);
 router.get("/articles", getAllArticles);

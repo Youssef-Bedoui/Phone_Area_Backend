@@ -31,7 +31,7 @@ const addArticle = (req, res) => {
     frontCamera,
     colors,
     link,
-    date
+    date,
   })
     .then((result) => {
       console.log(result);
@@ -45,7 +45,7 @@ const addArticle = (req, res) => {
 
 const getAllArticles = (req, res) => {
   DealsSchema.find()
-    .sort({ createdAt: -1 }) 
+    .sort({ createdAt: -1 })
     .then((articles) => {
       res.json(articles);
     })
@@ -70,8 +70,6 @@ const getArticleById = (req, res) => {
       res.status(500).send("Internal Server Error");
     });
 };
-
-
 
 const updateArticle = (req, res) => {
   const { id } = req.params;
